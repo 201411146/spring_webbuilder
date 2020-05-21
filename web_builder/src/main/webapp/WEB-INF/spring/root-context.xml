@@ -18,11 +18,8 @@
 		<property name="url"
 			value="jdbc:mariadb://127.0.0.1:3306/company" />
 		<property name="username" value="root" />
-<<<<<<< HEAD
 		<property name="password" value="1203" />
-=======
-		<property name="password" value="root" />
->>>>>>> branch 'master' of https://github.com/201411146/spring_webbuilder.git
+
 	</bean>
 
 	<bean id="sqlSessionFactory"
@@ -46,10 +43,6 @@
 		<!-- 업로드 패스 설정 -->
 	<bean class="java.lang.String" id="uploadPath">
 		<constructor-arg
-<<<<<<< HEAD
 			value="Users/taylor/git/spring_webbuilder/web_builder/src/main/webapp/resources" />
-=======
-			value="../" />
->>>>>>> branch 'master' of https://github.com/201411146/spring_webbuilder.git
 	</bean>
 </beans>
