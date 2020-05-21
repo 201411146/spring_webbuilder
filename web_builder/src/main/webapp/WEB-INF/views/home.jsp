@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/resources/bs/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/bs/bootstrap-theme.min.css">
 <script src="/resources/bs/bootstrap.min.js"></script>
-<title>Home1</title>
+<title>Home2</title>
 
 <style>
 * {
