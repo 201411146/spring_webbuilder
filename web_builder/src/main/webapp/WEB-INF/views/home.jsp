@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/resources/bs/bootstrap.min.css">
 <link rel="stylesheet" href="/resources/bs/bootstrap-theme.min.css">
 <script src="/resources/bs/bootstrap.min.js"></script>
-<title>Home</title>
+<title>Home2</title>
 
 <style>
 * {
@@ -44,7 +44,7 @@ body {
 
 </head>
 <body class = 'header'>
-	<h1>3LEE1CHAE</h1>
+	<h1>3LEE1CHAE test</h1>
 	<div id="nav"><%@ include file="/WEB-INF/views/company/companynavbar/companynav.jsp" %></div>
 </body>
 </html>

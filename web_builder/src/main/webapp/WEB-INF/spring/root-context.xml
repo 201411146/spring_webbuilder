@@ -18,7 +18,8 @@
 		<property name="url"
 			value="jdbc:mariadb://127.0.0.1:3306/company" />
 		<property name="username" value="root" />
-		<property name="password" value="root" />
+		<property name="password" value="1203" />
+
 	</bean>
 
 	<bean id="sqlSessionFactory"
@@ -42,6 +43,6 @@
 		<!-- 업로드 패스 설정 -->
 	<bean class="java.lang.String" id="uploadPath">
 		<constructor-arg
-			value="../" />
+			value="Users/taylor/git/spring_webbuilder/web_builder/src/main/webapp/resources" />
 	</bean>
 </beans>
