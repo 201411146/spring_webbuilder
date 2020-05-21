@@ -19,10 +19,7 @@
 			value="jdbc:mariadb://127.0.0.1:3306/company" />
 		<property name="username" value="root" />
 		<property name="password" value="1203" />
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/201411146/spring_webbuilder.git
 	</bean>
 
 	<bean id="sqlSessionFactory"
