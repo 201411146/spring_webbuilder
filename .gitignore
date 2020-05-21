@@ -76,5 +76,6 @@ local.properties
 
 web_builder/src/main/webapp/WEB-INF/spring/root-context.xml
 web_builder/target/m2e-wtp/web-resources/META-INF/maven/com.company/controller/pom.properties
+web_builder/target/m2e-wtp/web-resources/META-INF
 Servers/
 
