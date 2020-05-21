@@ -20,7 +20,7 @@
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 
-	</bean> 
+	</bean>
 
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
