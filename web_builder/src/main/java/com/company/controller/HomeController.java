@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	
-	//사이트 홈
+	//홈
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
 		
