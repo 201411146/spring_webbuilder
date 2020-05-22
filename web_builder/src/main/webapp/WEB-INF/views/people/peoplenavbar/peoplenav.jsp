@@ -41,7 +41,7 @@
 
 <div id ="menu">
 	<ul class = "one">
-		<li><a href="/${sitename}/board"> 전체게시판 </a></li>
+		<li><a href="/${sitename}/board"> 게시판 </a></li>
 		<li><a href=""> 카테고리 </a>
 		 <ul class = "two">
 				<li><a href=""> 경력별 </a>
