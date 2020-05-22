@@ -36,7 +36,7 @@
 			<p><a href="/${sitename}/login">로그인</a></p>
 		</c:if>
 		
-		<p><a href="/${sitename}/register">회원가입</a></p>
+		<p><a href="/${sitename}/register"> 회원가입 </a></p>
 </div>
 
 <div id ="menu">
