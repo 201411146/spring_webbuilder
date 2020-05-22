@@ -16,7 +16,7 @@
 <div id ="search">
 <form action = "/${sitename}/search" method ="get" >
   
-  <input type="text" name="keyword" placeholder="검색"/><button type="submit">검색 </button>
+  <input type="text" name="keyword" placeholder="검색"/><button type="submit">검색</button>
 </form>
 
 </div>
