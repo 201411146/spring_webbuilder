@@ -12,7 +12,7 @@
 <div id ="home">
 	<p><a href="/people/${sitename}">${sitename}</a></p>
 </div>
-
+ 
 <div id ="search">
 <form action = "/${sitename}/search" method ="get" >
   
