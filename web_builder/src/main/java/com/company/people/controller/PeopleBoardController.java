@@ -137,5 +137,16 @@ public class PeopleBoardController {
 
 			return "redirect:/{sitename}/board";
 		}
+		
+		// 게시물  검색
+				@RequestMapping(value = "/{sitename}/search", method = RequestMethod.GET)
+				public String getSearch(@PathVariable("sitename") String sitename, @RequestParam("keyword") String keyword, Model model) throws Exception {
+
+					List<PeopleBoardDTO> dto = service.search(sitename,keyword);
+					model.addAttribute("sitename", sitename);
+					model.addAttribute("dtos", dto);
+					
+					return "people/board/searchresult";
+				} 
 
 }

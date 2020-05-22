@@ -89,4 +89,16 @@
 		where 
 		boardid = #{boardid}
 	</delete>
+	
+	<!-- 게시물 검색 -->
+	<select id="search" parameterType="hashMap" resultType="com.company.people.boarddto.PeopleBoardDTO">
+		select
+		*
+		from 
+		${sitename}board
+		where 
+		title LIKE concat('%', #{keyword}, '%') 
+ 		or content LIKE concat('%', #{keyword}, '%')
+
+	</select>
 </mapper>

@@ -36,11 +36,9 @@
 	
 	
 
-</head>
-<body>
 <p>
 <c:forEach items="${dtos}" var="dtos">
-<a href="/${sitename}/view?boardid=${dtos.getBoardid()}">${dtos.getTitle()} </a><br/>
+${dtos.location} <a href="/${sitename}/view?boardid=${dtos.getBoardid()}">${dtos.getTitle()} </a> ${dtos.money} ${dtos.regdate}<br/>
 </c:forEach>
 </p>
 <a href="/${sitename}/write">글 작성</a> <br/>

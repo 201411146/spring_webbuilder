@@ -11,4 +11,5 @@ public interface PeopleBoardDAO {
 	public PeopleBoardDTO view(final String sitename, final int boardid);
 	public void modify(final String sitename, final PeopleBoardDTO dto);
 	public void delete(final String sitename, final int boardid);
+	public List<PeopleBoardDTO> search(final String sitename, final String keyword);
 }

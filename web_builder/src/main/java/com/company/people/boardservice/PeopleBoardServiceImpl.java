@@ -45,5 +45,11 @@ public class PeopleBoardServiceImpl implements PeopleBoardService {
 		// TODO Auto-generated method stub
 		dao.delete(sitename, boardid);
 	}
+	//게시물 검색
+	@Override
+	public List<PeopleBoardDTO> search(String sitename, String keyword) {
+		// TODO Auto-generated method stub
+		return dao.search(sitename, keyword);
+	}
 
 }

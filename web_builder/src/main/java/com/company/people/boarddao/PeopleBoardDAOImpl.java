@@ -49,7 +49,7 @@ public class PeopleBoardDAOImpl implements PeopleBoardDAO {
 		@Override
 		public void write(final String sitename, final PeopleBoardDTO dto) {
 			// TODO Auto-generated method stub
-			System.out.println(dto.getLocation());
+			
 			HashMap data = new HashMap();
 			
 			data.put("sitename", sitename);
@@ -109,6 +109,16 @@ public class PeopleBoardDAOImpl implements PeopleBoardDAO {
 		data.put("boardid", boardid);
 		
 		sql.delete(namespace + ".delete", data);
+	}
+
+	@Override
+	public List<PeopleBoardDTO> search(String sitename, String keyword) {
+		// TODO Auto-generated method stub
+		HashMap data = new HashMap();
+		data.put("sitename", sitename);
+		data.put("keyword", keyword);
+		
+		return sql.selectList(namespace + ".search",data);
 	}
 
 }
