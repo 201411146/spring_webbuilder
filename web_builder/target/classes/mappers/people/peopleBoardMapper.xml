@@ -101,4 +101,22 @@
  		or content LIKE concat('%', #{keyword}, '%')
 
 	</select>
+	
+	<!-- 게시물  즐겨찾기 등록 -->
+	<insert id="regbookmark" parameterType="hashMap">
+		insert into
+		${sitename}bookmark(boardid, userid)
+		values(#{boardid},#{userid})
+	</insert>
+	
+	<!-- 즐겨찾기 등록된 게시물id 가져오기 -->
+	<select id="getbookmarkid" parameterType="hashMap" resultType="Integer" >
+		select
+		boardid
+		from 
+		${sitename}bookmark
+		where 
+		userid = #{userid}
+
+	</select>
 </mapper>

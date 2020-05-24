@@ -10,6 +10,7 @@ public class PeopleMemberDTO {
 		private String userid;
 		private String userpass;
 		private Date regDate;
+	
 		public int getUserno() {
 			return userno;
 		}
@@ -22,7 +23,7 @@ public class PeopleMemberDTO {
 		public String getManagement() {
 			return management;
 		}
-		public void setMangement(String management) {
+		public void setManagement(String management) {
 			this.management = management;
 		}
 		public void setUserid(String userid) {

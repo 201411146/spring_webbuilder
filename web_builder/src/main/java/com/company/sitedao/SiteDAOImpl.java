@@ -35,7 +35,7 @@ public class SiteDAOImpl implements SiteDAO {
 		 data.put("category", category);
 		 data.put("status", status);
 		if(status.equals("deploy")) {
-			String member = "create table "+ sitename +"(userno int not null auto_increment, management varchar(50),\r\n" + 
+			String member = "create table "+ sitename +"(userno int not null auto_increment, management varchar(50), \r\n" + 
 					"  userid varchar(50) not null,\r\n" + 
 					"  userpass varchar(50) not null,\r\n" + 
 					"   regDate     date           not null default now(),\r\n" + 
@@ -44,6 +44,11 @@ public class SiteDAOImpl implements SiteDAO {
 			data.put("member",member);
 			sql.update(namespace+".createmember",data);
 			sql.insert(namespace+".management",data);
+			
+			String bookmark = "create table "+sitename+"bookmark(boardid int,userid varchar(50) not null)";
+			data.put("bookmark",bookmark);
+			sql.update(namespace+".createbookmark",data);
+			
 			if(category.equals("product")) {
 				String board = "create table "+sitename+"board(location varchar(50))";
 				data.put("board",board);
@@ -88,11 +93,15 @@ public class SiteDAOImpl implements SiteDAO {
 		if(status.equals("deploy")) {
 			String member = "drop table "+ sitename;
 			String board = "drop table "+ sitename+"board";
-			 
+			String bookmark = "drop table "+ sitename+"bookmark";
+			
 			 data.put("member",member);
 			 data.put("board",board);
+			 data.put("bookmark",bookmark);
+			 
 			sql.delete(namespace+".deletemember",data);
 			sql.delete(namespace+".deleteboard",data);
+			sql.delete(namespace+".deletebookmark",data);
 		}else {
 			
 		}

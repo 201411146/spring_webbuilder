@@ -51,5 +51,19 @@ public class PeopleBoardServiceImpl implements PeopleBoardService {
 		// TODO Auto-generated method stub
 		return dao.search(sitename, keyword);
 	}
+	//게시물 즐겨찾기 등록
+	@Override
+	public void regbookmark(String sitename, int boardid, String userid) {
+		// TODO Auto-generated method stub
+		dao.regbookmark(sitename, boardid, userid);
+	}
+	
+	// 즐겨찾기 등록된 게시물id 가져오기
+	@Override
+	public List<Integer> getbookmarkid(String sitename, String userid) {
+		// TODO Auto-generated method stub
+		return dao.getbookmarkid(sitename, userid);
+	}
+	
 
 }

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>로그인</title>
 </head>
 <body>
@@ -23,9 +23,10 @@
 			<button type="submit" id="submit">로그인</button>
 		</p>
 	</form>
-	<c:if test="${msg == false}">
+	
+  	<c:if test="${msg == false}"> -->
 		<p style="color: #f00;">로그인 실패 아이디 or 비밀번호 확인해주세요.</p>
-	</c:if>
+ 	</c:if> 
 	<p>
 		<a href="/register">회원가입</a>
 	</p>

@@ -110,7 +110,7 @@ public class PeopleBoardDAOImpl implements PeopleBoardDAO {
 		
 		sql.delete(namespace + ".delete", data);
 	}
-
+	//게시물 검색
 	@Override
 	public List<PeopleBoardDTO> search(String sitename, String keyword) {
 		// TODO Auto-generated method stub
@@ -119,6 +119,29 @@ public class PeopleBoardDAOImpl implements PeopleBoardDAO {
 		data.put("keyword", keyword);
 		
 		return sql.selectList(namespace + ".search",data);
+	}
+	//게시물 즐겨찾기 등록
+	@Override
+	public void regbookmark(String sitename, int boardid, String userid) {
+		// TODO Auto-generated method stub
+		HashMap data = new HashMap();
+		data.put("sitename", sitename);
+		data.put("boardid", boardid);
+		data.put("userid", userid);
+		
+		sql.insert(namespace + ".regbookmark", data);
+		
+	}
+	// 즐겨찾기 등록된 게시물id 가져오기
+	@Override
+	public List<Integer> getbookmarkid(String sitename, String userid) {
+		// TODO Auto-generated method stub
+		HashMap data = new HashMap();
+		data.put("sitename", sitename);
+		data.put("userid", userid);
+		
+		return sql.selectList(namespace + ".getbookmarkid",data);
+		
 	}
 
 }

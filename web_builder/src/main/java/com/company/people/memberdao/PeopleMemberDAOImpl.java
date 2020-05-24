@@ -23,10 +23,12 @@ public class PeopleMemberDAOImpl implements PeopleMemberDAO {
 	public void register(final String sitename, final PeopleMemberDTO dto) {
 		// TODO Auto-generated method stub
 		HashMap data = new HashMap();
+		HashMap data2 = new HashMap();
 		data.put("sitename", sitename);
 		data.put("userid", dto.getUserid());
 		data.put("userpass", dto.getUserpass());
 		sql.insert(namespace+".register",data);
+		
 	}
 	
 	//로그인

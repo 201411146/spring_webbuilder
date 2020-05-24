@@ -13,34 +13,101 @@
 <script src="/resources/bs/bootstrap.min.js"></script>
 
 <style>
- #menu{height:50px; background: #fcc; }
- .one{width: 600px; height: 100%; margin:0 auto;}
- .one > li{float: left; width: 20%; line-height: 50px; text-align:center; position:relative;}
- .one > li:hover .two{left: 0;}
- .one > li a{display:block;}
- .one > li a:hover {bakground: #B21016; color: #fff; font-weight: bold;}
- .two{position:absolute; top:50px; left: -9999px; background: #ccc; width:120%;}
- .two > li{position: relative;}
- .two > li:hover .three{left: 100%;}
+#menu {
+	height: 50px;
+	background: #fcc;
+}
 
- .three{position:absolute; top: 0; background: #6BD089; left:-9999px; width:200%;}
- .three > li a:hover{backgorund: #085820; color: #fff;}
+.one {
+	width: 600px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.one>li {
+	float: left;
+	width: 20%;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.one>li:hover .two {
+	left: 0;
+}
+
+.one>li a {
+	display: block;
+}
+
+.one>li a:hover {
+	bakground: #B21016;
+	color: #fff;
+	font-weight: bold;
+}
+
+.two {
+	position: absolute;
+	top: 50px;
+	left: -9999px;
+	background: #ccc;
+	width: 120%;
+}
+
+.two>li {
+	position: relative;
+}
+
+.two>li:hover .three {
+	left: 100%;
+}
+
+.three {
+	position: absolute;
+	top: 0;
+	background: #6BD089;
+	left: -9999px;
+	width: 200%;
+}
+
+.three>li a:hover {
+	backgorund: #085820;
+	color: #fff;
+}
 </style>
 </head>
 <body>
 
-			
-<%@ include file="/WEB-INF/views/people/peoplenavbar/peoplenav.jsp" %>
 
-			
-	
-	
+	<%@ include file="/WEB-INF/views/people/peoplenavbar/peoplenav.jsp"%>
 
-<p>
-<c:forEach items="${dtos}" var="dtos">
-${dtos.location} <a href="/${sitename}/view?boardid=${dtos.getBoardid()}">${dtos.getTitle()} </a> ${dtos.money} ${dtos.regdate}<br/>
-</c:forEach>
-</p>
-<a href="/${sitename}/write">글 작성</a> <br/>
+
+
+
+
+	<p>
+		<c:forEach items="${dtos}" var="dtos">
+			<c:if test="${bi != NULL}">
+				
+					<c:if test="${empty bi}">
+						<a href="/${sitename}/regbookmark?boardid=${dtos.getBoardid()}">즐겨찾기</a>
+					</c:if>
+				<c:forEach items="${bi}" var="bi">
+					
+					<c:if test="${bi != dtos.getBoardid()}">
+						<a href="/${sitename}/regbookmark?boardid=${dtos.getBoardid()}">즐겨찾기</a>
+					</c:if>
+				</c:forEach>
+			</c:if>
+
+			<c:if test="${bi == NULL}">
+				<a href="/${sitename}/regbookmark?boardid=${dtos.getBoardid()}">즐겨찾기</a>
+			</c:if>
+
+${dtos.location} <a href="/${sitename}/view?boardid=${dtos.getBoardid()}"> ${dtos.getTitle()} </a> ${dtos.money} ${dtos.regdate}<br/>
+		</c:forEach>
+	</p>
+
+	<a href="/${sitename}/write">글 작성</a>
 </body>
 </html>

@@ -34,9 +34,19 @@ public class PeopleBoardController {
 	// 게시물 목록
 	@RequestMapping(value = "/{sitename}/board", method = RequestMethod.GET)
 	public String list(@PathVariable("sitename") String sitename, Model model, HttpServletRequest req) throws Exception {
+		HttpSession session = req.getSession();
+		PeopleMemberDTO m = (PeopleMemberDTO) session.getAttribute("peoplemember");
+		
 		String category = req.getParameter("category");
 		String value = req.getParameter("value");
 		List<PeopleBoardDTO> dto = service.list(sitename,category,value);
+		
+		if(m != null) {
+			List<Integer> bi = service.getbookmarkid(sitename, m.getUserid());
+			model.addAttribute("bi", bi);
+		}
+		
+			
 		model.addAttribute("sitename", sitename);
 		model.addAttribute("dtos", dto);
 
@@ -148,5 +158,21 @@ public class PeopleBoardController {
 					
 					return "people/board/searchresult";
 				} 
+	 //게시물 즐겨찾기 등록
+				@RequestMapping(value = "/{sitename}/regbookmark", method = RequestMethod.GET)
+				public String getRegfavorites(@PathVariable("sitename") String sitename, @RequestParam("boardid") int boardid, HttpServletRequest req) throws Exception {
+					HttpSession session = req.getSession();
+					PeopleMemberDTO m = (PeopleMemberDTO) session.getAttribute("peoplemember");
+					
+					if (m == null) {
+						return "redirect:/{sitename}/login";
+					}else {
+						
+						service.regbookmark(sitename, boardid, m.getUserid());
+						return "redirect:/{sitename}/board";
+					}
+					
+				} 
+				
 
 }

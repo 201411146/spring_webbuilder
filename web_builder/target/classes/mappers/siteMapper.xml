@@ -54,8 +54,12 @@
 
 	<!-- 사이트의 게시판데이터베이스 삭제 -->
 	<update id="deleteboard" parameterType="hashMap">
-
 		${board}
+	</update>
+	
+	<!-- 사이트의 즐겨찾기데이터베이스 삭제 -->
+	<update id="deletebookmark" parameterType="hashMap">
+		${bookmark}
 	</update>
 
 	<!-- 사이트 수정 조회 -->
@@ -67,7 +71,7 @@
 		where siteid = #{siteid}
 	</select>
 
-	<!-- 게시물 수정 -->
+	<!-- 사이트 수정 -->
 	<update id="modifysite" parameterType="hashMap">
 		update site
 		set
@@ -79,4 +83,8 @@
 		=#{siteid}
 	</update>
 
+	<!-- 사이트의 즐겨찾기데이터베이스 생성 -->
+	<update id="createbookmark" parameterType="hashMap">
+		${bookmark}
+	</update>
 </mapper>

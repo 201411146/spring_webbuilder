@@ -12,4 +12,6 @@ public interface PeopleBoardDAO {
 	public void modify(final String sitename, final PeopleBoardDTO dto);
 	public void delete(final String sitename, final int boardid);
 	public List<PeopleBoardDTO> search(final String sitename, final String keyword);
+	public void regbookmark(String sitename, int boardid, String userid);
+	public List<Integer> getbookmarkid(final String sitename, final String userid);
 }
