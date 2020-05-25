@@ -26,7 +26,7 @@
 			<p><a href="/${sitename}/logout">로그아웃</a></p>
 			<p><a href="/${sitename}/bookmark">즐겨찾기목록</a></p>
 			<p><a href="">회원정보수정</a></p>
-			<p><a href="">쪽지함</a></p>
+			<p><a href="/${sitename}/notebox">쪽지함</a></p>
 		</c:if>
 		
 		<c:if test="${peoplemember != null && peoplemember.getManagement() eq 'true'}">

@@ -61,6 +61,11 @@
 	<update id="deletebookmark" parameterType="hashMap">
 		${bookmark}
 	</update>
+	
+	<!-- 사이트의 쪽지함데이터베이스 삭제 -->
+	<update id="deletenotebox" parameterType="hashMap">
+		${notebox}
+	</update>
 
 	<!-- 사이트 수정 조회 -->
 	<select id="view" parameterType="int"
@@ -86,5 +91,11 @@
 	<!-- 사이트의 즐겨찾기데이터베이스 생성 -->
 	<update id="createbookmark" parameterType="hashMap">
 		${bookmark}
+	</update>
+	
+	
+	<!-- 사이트의 쪽지함데이터베이스 생성 -->
+	<update id="createnotebox" parameterType="hashMap">
+		${notebox}
 	</update>
 </mapper>

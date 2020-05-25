@@ -28,7 +28,7 @@ ${view.content}<br />
 
 마감일 ${view.deadline}<br/>
 
-<a href="/${sitename}/apply?">지원하기</a>
+<a href="/${sitename}/apply?boardid=${view.getBoardid()}&touserid=${view.getUserid()}">지원하기</a> <br/>
 <c:if test="${view.getUserid() eq peoplemember.getUserid()}">
 <a href="/${sitename}/modify?boardid=${view.getBoardid()}">수정</a>  <a href="/${sitename}/delete?boardid=${view.getBoardid()}">삭제</a>
 </c:if>

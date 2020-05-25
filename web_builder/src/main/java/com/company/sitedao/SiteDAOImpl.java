@@ -49,6 +49,15 @@ public class SiteDAOImpl implements SiteDAO {
 			data.put("bookmark",bookmark);
 			sql.update(namespace+".createbookmark",data);
 			
+			String notebox = "create table "+sitename+"notebox(noteboxid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\r\n" + 
+					"boardid int,\r\n" + 
+					"touserid varchar(50) not null,\r\n" + 
+					"fromuserid varchar(50) not null,\r\n" + 
+					"title varchar(50),\r\n" + 
+					"content varchar(300))";
+			data.put("notebox",notebox);
+			sql.update(namespace+".createnotebox",data);
+			
 			if(category.equals("product")) {
 				String board = "create table "+sitename+"board(location varchar(50))";
 				data.put("board",board);
@@ -94,14 +103,18 @@ public class SiteDAOImpl implements SiteDAO {
 			String member = "drop table "+ sitename;
 			String board = "drop table "+ sitename+"board";
 			String bookmark = "drop table "+ sitename+"bookmark";
+			String notebox = "drop table "+ sitename+"notebox";
 			
 			 data.put("member",member);
 			 data.put("board",board);
 			 data.put("bookmark",bookmark);
+			 data.put("notebox",notebox);
 			 
 			sql.delete(namespace+".deletemember",data);
 			sql.delete(namespace+".deleteboard",data);
 			sql.delete(namespace+".deletebookmark",data);
+			sql.delete(namespace+".deletenotebox",data);
+			
 		}else {
 			
 		}

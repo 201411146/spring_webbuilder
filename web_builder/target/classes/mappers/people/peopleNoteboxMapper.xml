@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.mappers.people.peopleNoteboxMapper">
+
+
+	<!-- 지원하기 -->
+	<insert id="apply" parameterType="hashMap">
+		insert into
+		${sitename}notebox(boardid, touserid,
+		fromuserid, title, content)
+		values(#{boardid}, #{touserid}, #{fromuserid}, #{title}, #{content})
+	</insert>
+	
+	<!-- 받은쪽지함 목록 -->
+	<select id="receive" parameterType="hashMap" resultType="com.company.people.noteboxdto.PeopleNoteboxDTO">
+		select
+		*
+		from 
+		${sitename}notebox
+		where
+		touserid = #{userid}
+	</select>
+</mapper>
